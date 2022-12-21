@@ -1,6 +1,9 @@
 # ДЗ 1
 
-Theory [2]
+## Theory 
+
+
+[2]
 As usual, we will start with a few theoretical questions:
 
 [0.5] What is Docker, and how it differs from dependencies management systems? From virtual machines?
@@ -15,7 +18,7 @@ As usual, we will start with a few theoretical questions:
 
 
 
-Anaconda:
+## Anaconda:
 
 [1] Install conda, create a new virtual environment, and install all necessary packages.
 
@@ -24,7 +27,7 @@ Anaconda:
 [0.25] Export the environment (example) to the file and verify that it can be rebuilt from the file without problems.
 
 
-Docker:
+## Docker:
 
 [3] Create a Dockerfile for a container with all required dependencies. Conda usage is not allowed, don't forget about comments; test that all tools are accessible and work inside the container. Hints:
 If needed, grant rights to execute downloaded/compiled binaries using chmod (chmod a+x BINARY_NAME)
