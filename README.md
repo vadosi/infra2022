@@ -38,7 +38,7 @@
 [0.25] Install nginx and amend its config(/etc/nginx/nginx.conf) to contain the following section:
 
 
-'''
+```
 http {
 # Don't touch other options!
 # ........
@@ -57,7 +57,7 @@ server {
 # ........
 }
 
-'''
+```
 
 
 [0.25] Restart the nginx (reload its config) and make sure that you can access the browser using a link like this: http://64.129.58.13/jbrowse/. Here 64.129.58.13 is your public IP address.
