@@ -49,7 +49,6 @@ sudo gzip -d atac.bed.gz
 Ставим bedtools для сортировки и tabix для индексирования:
 
 ```
-
 sudo apt install tabix
 sudo apt install bedtools
 ```
@@ -57,7 +56,6 @@ sudo apt install bedtools
 Bedtools sort плохо писал через >, пришлось использовать tee:
 
 ```
-
 bedtools sort -i atac.bed | sudo tee atac_sort.bed 
 bedtools sort -i tf1.bed | sudo tee tf1_sort.bed 
 bedtools sort -i tf2.bed | sudo tee tf2_sort.bed 
@@ -92,6 +90,12 @@ tabix -f -p bed atac_sort.bed.gz
 
 
 [1] Download and install JBrowse 2. Create a new jbrowse repository in /mnt/JBrowse/ (or some other folder).
+
+Сделаем папку mnt/jbrowse и скачаем туда установщик:
+
+
+
+
 
 [0.25] Install nginx and amend its config(/etc/nginx/nginx.conf) to contain the following section:
 
