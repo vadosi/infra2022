@@ -28,6 +28,64 @@
 
 [1] Select and download BED files for three ChIP-seq and one ATAC-seq experiment from the ENCODE (use one tissue/cell line). Sort, bgzip, and index them using tabix.
 
+Пожалуй, самый запарный этап. Скачиваем через ftp аналогично ДЗ2 по МЛ: 
+
+```
+# ChIP-seqs
+sudo wget -O tf1.bed.gz "https://www.encodeproject.org/files/ENCFF271MJE/@@download/ENCFF271MJE.bed.gz"
+sudo gzip -d tf1.bed.gz
+
+sudo wget -O tf2.bed.gz "https://www.encodeproject.org/files/ENCFF408XPG/@@download/ENCFF408XPG.bed.gz"
+sudo gzip -d tf2.bed.gz
+
+sudo wget -O tf3.bed.gz "https://www.encodeproject.org/files/ENCFF060JVZ/@@download/ENCFF060JVZ.bed.gz"
+sudo gzip -d tf3.bed.gz
+
+# ATAC-seq
+sudo wget -O atac.bed.gz "https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz"
+sudo gzip -d atac.bed.gz
+```
+
+Ставим bedtools для сортировки и tabix для индексирования:
+
+```
+
+sudo apt install tabix
+sudo apt install bedtools
+```
+
+Bedtools sort плохо писал через >, пришлось использовать tee:
+
+```
+
+bedtools sort -i atac.bed | sudo tee atac_sort.bed 
+bedtools sort -i tf1.bed | sudo tee tf1_sort.bed 
+bedtools sort -i tf2.bed | sudo tee tf2_sort.bed 
+bedtools sort -i tf3.bed | sudo tee tf3_sort.bed 
+
+```
+
+Отсортированные bed`s сжимаем и индексируем:
+
+```
+bgzip -c tf1_sort.bed > tf1_sort.bed.gz
+bgzip -c tf2_sort.bed > tf2_sort.bed.gz
+bgzip -c tf3_sort.bed > tf3_sort.bed.gz
+bgzip -c atac_sort.bed > atac_sort.bed.gz
+
+
+tabix -f -p bed tf1_sort.bed.gz
+tabix -f -p bed tf2_sort.bed.gz
+tabix -f -p bed tf3_sort.bed.gz
+tabix -f -p bed atac_sort.bed.gz
+
+```
+
+Получили такую палитру файликов:
+
+![image](https://user-images.githubusercontent.com/58905528/209015121-dcfdee51-2062-4b6a-91a7-dfbac8a46f5b.png)
+
+
 
 
 ## JBrowse 2
