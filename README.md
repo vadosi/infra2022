@@ -91,8 +91,20 @@ tabix -f -p bed atac_sort.bed.gz
 
 [1] Download and install JBrowse 2. Create a new jbrowse repository in /mnt/JBrowse/ (or some other folder).
 
-Сделаем папку mnt/jbrowse и скачаем туда установщик:
+Сначала нужно поставить npm, потом установить браузер:
 
+```
+sudo apt install npm
+npm install -g @jbrowse/cli
+```
+
+Сделаем папку //jbrowse, создадим в ней jbrowse2:
+
+```
+cd //
+sudo mkdir jbrowse
+sudo jbrowse create jbrowse2
+```
 
 
 
@@ -120,9 +132,7 @@ server {
 }
 
 ```
-![image](https://user-images.githubusercontent.com/58905528/209026122-d9fdbc18-b3e1-4a71-8812-9898ba0c5c75.png)
-
-
+![image](https://user-images.githubusercontent.com/58905528/209031299-464632ff-48b0-474b-b4e2-ff0fc97a6b48.png)
 
 
 
