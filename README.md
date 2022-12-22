@@ -120,8 +120,16 @@ server {
 }
 
 ```
+![image](https://user-images.githubusercontent.com/58905528/209026122-d9fdbc18-b3e1-4a71-8812-9898ba0c5c75.png)
+
+
+
 
 
 [0.25] Restart the nginx (reload its config) and make sure that you can access the browser using a link like this: http://64.129.58.13/jbrowse/. Here 64.129.58.13 is your public IP address.
+
+И... ничего, конфиг менял как только можно![image](https://user-images.githubusercontent.com/58905528/209026165-1f91171a-181e-4927-8269-e7e50cc5d0cf.png)
+
+
 
 [1] Add your files (BED & FASTA & GFF3) to the genome browser and verify that everything works as intended. Don't forget to index the genome annotation, so you could later search by gene names.
