@@ -200,6 +200,9 @@ server {
 }
 }
 ```
+![image](https://user-images.githubusercontent.com/58905528/209094822-3b9c4182-119c-401d-aa64-a3176598dba1.png)
+
+
 
 [0.25] Restart the nginx (reload its config) and make sure that you can access the browser using a link like this: http://64.129.58.13/jbrowse/. Here 64.129.58.13 is your public IP address.
 
