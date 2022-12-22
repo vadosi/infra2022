@@ -207,5 +207,29 @@ Reload сделали ранее, все отркывается (спасибо)
 
 http://51.250.108.166/jbrowse/
 
+![image](https://user-images.githubusercontent.com/58905528/209097894-2e2fd992-043e-4b1c-aaf7-d736c0590728.png)
+
 
 [1] Add your files (BED & FASTA & GFF3) to the genome browser and verify that everything works as intended. Don't forget to index the genome annotation, so you could later search by gene names.
+
+
+
+```
+sudo jbrowse add-assembly Homo_sapiens.GRCh38.dna.primary_assembly.fa --load copy --out /mnt/browser/
+sudo jbrowse add-track Homo_sapiens.GRCh38.108s.gff3.gz --load copy --out /mnt/browser/
+sudo jbrowse add-track atac_sort.bed.gz --load copy --out /mnt/browser/
+sudo jbrowse add-track tf1_sort.bed.gz --load copy --out /mnt/browser/
+sudo jbrowse add-track tf2_sort.bed.gz --load copy --out /mnt/browser/
+sudo jbrowse add-track tf3_sort.bed.gz --load copy --out /mnt/browser/	
+
+sudo nginx -s reload
+```
+
+Ура, все работает:
+
+![image](https://user-images.githubusercontent.com/58905528/209102912-a566de86-a126-4513-93e5-3a2bc9e68ec2.png)
+
+
+Ссылка:
+
+http://51.250.108.166/jbrowse/?session=share-IXiGgwzFjE&password=T0YCh
