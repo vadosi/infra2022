@@ -178,17 +178,14 @@ sudo nginx -s reload
 ![image](https://user-images.githubusercontent.com/58905528/209035439-86e7f166-ba75-4f9d-9e7b-456ed138e60e.png)
 
 
-Потратил часа 3 на это, конфиг идентичный, но ошибка 403/404
-
-![image](https://user-images.githubusercontent.com/58905528/209031299-464632ff-48b0-474b-b4e2-ff0fc97a6b48.png)
+Поменяем конфиг nginx, чтобы он хостил jbrowse:
 
 ```
 sudo nano /etc/nginx/nginx.conf
 sudo nginx -s reload
 ```
 
-
-Последняя версия:
+Конфиг:
 ```
 ...
 server {
@@ -206,11 +203,9 @@ server {
 
 [0.25] Restart the nginx (reload its config) and make sure that you can access the browser using a link like this: http://64.129.58.13/jbrowse/. Here 64.129.58.13 is your public IP address.
 
-http://51.250.108.166/
+Reload сделали ранее, все отркывается (спасибо)
 
-И... ничего, конфиг менял как только можно
-![image](https://user-images.githubusercontent.com/58905528/209026165-1f91171a-181e-4927-8269-e7e50cc5d0cf.png)
-
+http://51.250.108.166/jbrowse/
 
 
 [1] Add your files (BED & FASTA & GFF3) to the genome browser and verify that everything works as intended. Don't forget to index the genome annotation, so you could later search by gene names.
