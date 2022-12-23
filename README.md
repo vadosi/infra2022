@@ -13,10 +13,13 @@ As usual, we will start with a few theoretical questions:
 
 [0.5] What are the advantages and disadvantages of using containers over other approaches?
 
-Контейнеры экономят ресурсы и время, но являются более медленными и менее безопасными. Кроме того, при перезагрузке несохраненные данные теряются.
+Контейнеры экономят ресурсы и время, но являются более медленными и менее безопасными. Кроме того, при удалении контейнера несохраненные данные теряются.
 
 
 [0.5] Explain how Docker works: what are Dockerfiles, how are containers created, and how are they run and destroyed?
+
+После запуска докер работает в фоне в виде демона. Сначала создается образ - виртуальное окружение, по "образу" которого может быть контейнер. Он будет представлять собой изолированный кусок файловой системы, внутри которой можно развлекаться как угодно, например распаковать пару вирусов. Из контейнера можно извлечь данные, если этого не сделать, то после удаления контейнера все его данные будут утеряны.
+
 
 [0.25] Name and describe at least one Docker competitor (i.e., a tool based on the same containerization technology).
 
